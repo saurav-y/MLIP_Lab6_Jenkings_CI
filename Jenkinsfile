@@ -16,14 +16,22 @@ pipeline {
                 echo 'Test Step: We run testing tool like pytest here'
 
                 # TODO fill out the path to conda here
-                sudo /home/team19/anaconda3/bin/conda init
+                # sudo /home/team19/anaconda3/bin/conda init
 
                 # TODO Complete the command to run pytest
-                sudo /home/team19/anaconda3/bin/conda run -n mlip pytest
+                # sudo /home/team19/anaconda3/bin/conda run -n mlip pytest
 
                 # echo 'pytest not runned'
                 # exit 1 #comment this line after implementing Jenkinsfile
+
+                python3 -m venv venv
+                source venv/bin/activate
+                pip install pytest numpy pandas scikit-learn
+                pytest
+
                 '''
+
+                
 
             }
         }
